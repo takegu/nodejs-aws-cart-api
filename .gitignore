@@ -36,3 +36,11 @@ lerna-debug.log*
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
+cdk.js
+.DS_Store
+
+.env
