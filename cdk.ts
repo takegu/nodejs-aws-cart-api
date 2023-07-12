@@ -30,15 +30,22 @@ const sharedLambdaProps: Partial<NodejsFunctionProps> = {
       '@nestjs/websockets/socket-module',
       '@nestjs/microservices/microservices-module',
       '@nestjs/microservices',
-      'class-validator',
+      'better-sqlite3',
+      'tedious',
+      'mysql',
+      'mysql2',
+      'oracledb',
+      'sqlite3',
+      'pg-query-stream'
     ],
   },
 };
 
-const cartApiHandler = new NodejsFunction(stack, 'CartApiHandler', {
+const cartApiHandler = new NodejsFunction(stack, 'cartApiHandler', {
   ...sharedLambdaProps,
-  functionName: 'CartApiHandler',
-  entry: './dist/src/main.js',
+  functionName: 'cartApiHandler',
+  entry: './dist/main.js',
+  handler: 'cartApiHandler',
 });
 
 const api = new apiGateway.HttpApi(stack, 'CartApi', {
