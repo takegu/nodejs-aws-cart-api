@@ -19,7 +19,10 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "cdk:deploy": "npx cdk deploy --profile aws-rs"
+    "cdk:deploy": "npx cdk deploy --profile aws-rs",
+    "cdk:deploy:build": "npx nest build --webpack && npm run cdk:deploy",
+    "rds:create-tables": "ts-node ./src/db/db.createTables.ts",
+    "rds:autofill": "ts-node ./src/db/db.fillTables.ts"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.3",
@@ -36,6 +39,7 @@
     "passport-http": "^0.3.0",
     "passport-jwt": "^4.0.1",
     "passport-local": "^1.0.0",
+    "pg": "^8.11.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1",
     "uuid": "^9.0.0"
