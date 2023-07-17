@@ -1,12 +1,12 @@
 {
   "AWSEBDockerrunVersion": "1",
   "Image": {
-    "Name": "epamandreimakarevich1/takegu-cart-api",
+    "Name": "epamandreimakarevich1/takegu-cart-api-v1",
     "Update": "true"
   },
   "Ports": [
     {
-      "ContainerPort": "3000"
+      "ContainerPort": "8080"
     }
   ]
 }

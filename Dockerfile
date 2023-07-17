@@ -32,7 +32,7 @@ RUN npm i --only=production
 COPY --from=build /usr/src/app/dist /usr/src/app/dist
 
 # Expose the port the app will run on
-EXPOSE 3000
+EXPOSE 8080
 
 # Start the application
 CMD ["node", "dist/src/main.js"]
