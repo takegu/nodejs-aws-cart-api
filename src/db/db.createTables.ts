@@ -1,18 +1,18 @@
 import PostgreClient from './db.connect';
 
-async function ordersTableUp() {
+async function cartssTableUp() {
   try {
-    await PostgreClient.schema.createTable('orders', (table) => {
+    await PostgreClient.schema.createTable('carts', (table) => {
       table.uuid('id').primary();
       table.uuid('user_id').notNullable();
       table.date('created_at').notNullable();
       table.date('updated_at').notNullable();
       table.enum('status', ['OPEN', 'ORDERED']).notNullable();
 
-      console.log('Table orders created successfully!');
+      console.log('Table carts created successfully!');
     });
   } catch (error) {
-    console.error('Error orders creating table:', error);
+    console.error('Error carts creating table:', error);
   }
 }
 
@@ -32,5 +32,5 @@ async function cartItemsTableUp() {
   }
 }
 
-ordersTableUp();
+cartssTableUp();
 cartItemsTableUp();

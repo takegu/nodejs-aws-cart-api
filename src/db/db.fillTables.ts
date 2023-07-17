@@ -56,7 +56,7 @@ async function insertMockOrdersData(): Promise<void> {
   const mockData = generateMockData(10); // Generate 10 mock data entries
 
   try {
-    await PostgreClient('orders').insert(mockData); // Insert mock data
+    await PostgreClient('carts').insert(mockData); // Insert mock data
     console.log('Mock data inserted successfully');
   } catch (error) {
     console.error('Error inserting mock data:', error);
