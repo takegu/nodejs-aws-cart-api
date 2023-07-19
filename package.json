@@ -20,6 +20,7 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "cdk:deploy": "npx cdk deploy --profile aws-rs",
+    "npx:build": "npx nest build --webpack",
     "cdk:deploy:build": "npx nest build --webpack && npm run cdk:deploy",
     "rds:create-tables": "ts-node ./src/db/db.createTables.ts",
     "rds:autofill": "ts-node ./src/db/db.fillTables.ts"
