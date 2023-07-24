@@ -4,7 +4,7 @@ import { AppModule } from './app.module';
 import { APIGatewayProxyEvent, Context, Handler, Callback } from 'aws-lambda';
 import * as serverlessExpress from '@vendia/serverless-express';
 
-const port = process.env.DB_PORT || 3000;
+const port = process.env.DB_PORT || 8080;
 
 async function createApp() {
   const app = await NestFactory.create(AppModule);
